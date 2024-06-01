@@ -1,0 +1,168 @@
+.Fenêtre {
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1;
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.Close {
+  font-size: 40px;
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  opacity: 1;
+  font-weight: bold;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.Close:hover,
+.Close:focus {
+  color: rgb(0, 0, 0);
+  background: red;
+}
+
+.Fenêtre_contenu {
+  width: 60%;
+  height: 60%;
+  margin-top: 90px;
+  border: 10px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+}
+
+.Contenue_1 {
+  margin-left: 26px;
+  margin-right: 26px;
+}
+
+.Contenue_1 ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.Barage {
+  margin-left: 16px;
+  margin-right: 16px;
+  border: 2px solid red;
+}
+
+.Contenue_2 {
+  margin-left: 16px;
+  margin-top: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.Fenêtre input[type="text"] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.Contenue_3 {
+  margin-left: 16px;
+  margin-top: 0px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.Fenêtre input[type="password"] {
+  display: inline-block;
+  width: 90%;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 15px;
+}
+
+.Contenue_4 {
+  margin-left: 16px;
+  margin-top: 0px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.Contenue_5 {
+  margin-left: 16px;
+  margin-top: 0px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 15px;
+  display: inline-flex;
+  font-weight: bold;
+}
+
+.Fin_du_forum::after {
+  content: "";
+  display: table;
+  clear: both;
+  margin-top: 10px;
+}
+
+.Fenêtre button.Sign_Up {
+  padding: 14px 20px;
+  background-color: #04aa6d;
+  color: white;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.Fenêtre button.Cancel {
+  background: red;
+}
+
+.Fenêtre button.Cancel,
+.Fenêtre button.Sign_Up {
+  float: left;
+  width: 50%;
+}
+
+.Fenêtre input[type="text"]:focus,
+.Fenêtre input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.Espace {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 0;
+}
+.Espace button {
+  background-color: #04aa6d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.login-button {
+  border: solid 0px;
+  border-radius: 5px;
+  background: rgb(221, 220, 220);
+  color: #0056b3;
+}

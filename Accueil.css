@@ -1,0 +1,260 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #6e767e;
+}
+
+.WRAPPER {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #020a1b;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  color: #007bff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.header img {
+  max-height: 50px;
+}
+
+.NAVIGATION {
+  background-color: #335e8a;
+  padding: 30px;
+}
+
+.NAVIGATION ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.NAVIGATION ul li {
+  position: relative;
+  margin: 0 10px;
+}
+
+.NAVIGATION ul li a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #ced4da;
+  border-radius: 5px;
+  color: #007bff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.NAVIGATION ul li a:hover {
+  background-color: #adb5bd;
+  color: #0056b3;
+}
+
+.NAVIGATION ul li .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ced4da;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  min-width: 150px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.NAVIGATION ul li .submenu li {
+  margin: 0;
+}
+
+.NAVIGATION ul li .submenu li a {
+  padding: 10px;
+  display: block;
+  background-color: #ced4da;
+  border-bottom: 1px solid #adb5bd;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.NAVIGATION ul li .submenu li a:hover {
+  background-color: #adb5bd;
+  color: #0056b3;
+}
+
+.NAVIGATION ul li:hover .submenu {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.SECTION {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  border: solid 2px #a38e8e;
+}
+
+.FOOTER {
+  background-color: #242c33;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+.contact-info {
+  margin-bottom: 20px;
+}
+.contact-info p {
+  margin: 5px 0;
+}
+.google-map {
+  width: 100%;
+  height: 300px;
+}
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.carousel-container {
+  text-align: center;
+  background: #a38e8e;
+  padding: 20px;
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+}
+.carousel-item {
+  min-width: 100%;
+  transition: transform 0.5s ease;
+}
+.carousel img {
+  margin-top: 10px;
+  width: 800px;
+  height: 360px;
+}
+.description {
+  text-align: center;
+  margin-top: 10px;
+}
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.details span {
+  font-size: 0.9rem;
+}
+.price {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+.carousel-container p {
+  font-size: 30px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+}
+
+.Evenement_buletin {
+  padding: 15px;
+}
+.Evenement_buletin button {
+  padding: 10px 8px;
+  background-color: rgb(165, 160, 160);
+  color: #007bff;
+  border-radius: 5px;
+}
+.Evenement_de_la_semaine {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.Evenement_de_la_semaine h4 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #837e7e;
+}
+.Evenement_contenu {
+  text-align: center;
+  border: solid 4px black;
+  border-radius: 150px;
+}
+.Evenement_contenu h5 {
+  font-size: 30px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+}
+.Evenement_contenu img {
+  width: 800px;
+  height: 360px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+.Evenement_contenu p {
+  font-size: 1em;
+  color: #000000;
+  margin-top: 10px;
+}
+.Evenement_de_la_semaine,
+.Bulletin {
+  display: none;
+}
+.active {
+  display: block;
+}
+.mot_bienvenue {
+  font-family: "Times New Roman", Times, serif;
+  background: #485e72;
+  padding: 10px 100px;
+}
+.mot_bienvenue p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-style: italic;
+  background: #31404e;
+  padding: 10px 100px;
+}

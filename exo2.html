@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>Introduction à l'objet XMLHttpRequest</title>
+
+ <script type="text/javascript">
+
+ function loadXMLDoc() {
+
+	 var xhttp = new XMLHttpRequest();
+
+	 xhttp.onreadystatechange = function() {
+	 if (this.readyState == 4 && this.status == 200) {
+	 document.getElementById("demo").innerHTML = this.responseText;
+	 }
+ };
+ xhttp.open("GET", "erasmus.html", true);
+ xhttp.send();
+ }
+
+ <!--JavaScript-->
+
+function loadXMLDoc() {
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+// Request finished and response
+// is ready and Status is "OK"
+if (this.readyState == 4 && this.status == 200) {
+studentDetails(this);
+}
+};
+// etudiants.xml is the external xml file
+xmlhttp.open("GET", "etudiants.xml", true);
+xmlhttp.send();
+}
+function studentDetails(xml) {
+
+var i;
+var xmlDoc = xml.responseXML;
+var table =
+`<tr>
+ <th>Prenom</th>
+ <th>Nom</th>
+<th>Age</th>
+<th>Majeure</th>
+<th>Ville</th>
+<th>Pays</th>
+</tr>`;
+
+var x = xmlDoc.getElementsByTagName("etudiant");
+// Start to fetch the data by using TagName
+for (i = 0; i < x.length; i++) {
+table += 
+ "<tr><td>" +
+x[i].getElementsByTagName("prenom")[0]
+.childNodes[0].nodeValue 
+
++ "</td><td>" +
+x[i].getElementsByTagName("nom")[0]
+.childNodes[0].nodeValue 
++ "</td><td>" +
+x[i].getElementsByTagName("age")[0]
+.childNodes[0].nodeValue 
++ "</td><td>" +
+x[i].getElementsByTagName("majeure")[0]
+.childNodes[0].nodeValue 
++ "</td><td>" +
+x[i].getElementsByTagName("ville")[0]
+.childNodes[0].nodeValue 
++ "</td><td>" +
+x[i].getElementsByTagName("pays")[0]
+.childNodes[0].nodeValue 
++ "</td></tr>";
+}
+
+// Afficher les données xml sous forme de tableau
+document.getElementById("myTable").innerHTML = table;
+}
+</script>
+
+<style>
+table {
+border-collapse: collapse;
+width: 100%;
+}
+th, td {
+text-align: left;
+padding: 8px;
+}
+tr:nth-child(even) {
+background-color: #7ce2af
+}
+th {
+background-color: #336699;
+color: white;
+}
+.button {
+position: relative;
+text-align: center;
+padding: 20px;
+border: 4px solid rgb(55, 12, 211);
+background-color: rgba(20, 192, 4, 0.5);
+color: rgb(230, 36, 78);
+outline: none;
+border-radius: 10px;
+font-size: 30px;
+width: 500px;
+}
+.button:hover {
+color: black;
+background-color: white;
+}
+</style>
+
+</head>
+
+
+<body>
+
+ <h2>L'Objet XMLHttpRequest</h2>
+ <div id="demo">
+ <button type="button" onclick="loadXMLDoc()">Qu'est-ce qu'Erasmus?</button>
+ </div>
+
+ <p>
+<center>
+<button type="button" class="button"
+onclick="loadXMLDoc()">
+Afficher Etudiants d'Erasmus
+</button>
+</center>
+</p>
+<p>
+<table id="myTable"></table>
+</p>
+
+<h3>Paiement par carte de crédit</h3>
+<form action="creditCard.php" method="post">
+<table>
+<tr>
+<td>Montant à payer:</td>
+<td><input type="number" step="0.01" name="amount"></td>
+</tr>
+<tr>
+<td>Payer par:</td>
+<td>
+<input type="radio" name="creditCard" value="MasterCard">MasterCard <br>
+<input type="radio" name="creditCard" value="Visa">Visa <br>
+<input type="radio" name="creditCard" value="AmericanExpress">American 
+Express <br><br>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+<input type="submit" name="button1" value="Submit">
+</td>
+</tr>
+</table>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+#carrousel {
+    position: relative;
+    height: 400px;
+    width: 700px;
+    margin: auto;
+    overflow: hidden;
+}
+
+#carrousel ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 700%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+#carrousel ul li { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+} 
+
+#carrousel img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.styler {
+    border: 2px solid black; /* Ajoute une bordure à la div styler */
+    display: inline-block; /* Permet à la div de s'adapter à la largeur de son contenu */
+    padding: 20px; /* Ajoute un peu d'espace entre la bordure et le contenu */
+    position: fixed; /* Positionnement fixe par rapport à la fenêtre du navigateur */
+    top: 50%; /* Déplace la div à 50% de la hauteur de la fenêtre */
+    left: 50%; /* Déplace la div à 50% de la largeur de la fenêtre */
+    transform: translate(-50%, -50%); /* Centre la div horizontalement et verticalement */
+}
+
+.controls {
+    position: absolute;
+    left: 50%; /* Déplacer à mi-chemin horizontalement */
+    transform: translateX(-50%); /* Centrer horizontalement */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centrer les boutons horizontalement */
+    align-items: center; /* Centrer les boutons verticalement */
+}
+
+.controls .prev,
+.controls .next {
+    background-color: #007bff; /* Couleur de fond des boutons */
+    color: white; /* Couleur du texte des boutons */
+    padding: 10px 20px; /* Espace à l'intérieur des boutons */
+    border: none; /* Supprimer la bordure des boutons */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de la souris sur les boutons */
+    transition: background-color 0.3s; /* Animation de transition */
+}
+
+.controls .prev:hover,
+.controls .next:hover {
+    background-color: #0056b3; /* Couleur de fond des boutons au survol */
+}
+
+
+
+h1 {
+    text-align: center; 
+    color: red; 
+    background-color: #ADD8E6; 
+}

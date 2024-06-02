@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>Introduction à l'objet XMLHttpRequest</title>
+
+<script type="text/javascript">
+ function loadXMLDoc() {
+ var xhttp = new XMLHttpRequest();
+ xhttp.onreadystatechange = function() {
+ if (this.readyState == 4 && this.status == 200) {
+ document.getElementById("demo").innerHTML = this.responseText;
+ }
+ };
+ // Modification du chemin pour charger exo1.html au lieu de erasmus.html
+ xhttp.open("GET", "1.html", true);
+ xhttp.send();
+ }
+ </script>
+
+
+ <!--JavaScript-->
+
+<script>
+function loadXMLDoc2() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        // Requête terminée et réponse
+        // prête et le statut est "OK"
+        if (this.readyState == 4 && this.status == 200) {
+            provinceDetails(this);
+        }
+    };
+    // provinces.xml est le fichier XML externe
+    xmlhttp.open("GET", "1.xml", true);
+    xmlhttp.send();
+}
+
+function provinceDetails(xml) {
+    var i;
+    var xmlDoc = xml.responseXML;
+    var table =
+    `<tr>
+        <th>Nom</th>
+        <th>Code</th>
+        <th>Capitale</th>
+        <th>Superficie</th>
+        <th>Population</th>
+    </tr>`;
+    var x = xmlDoc.getElementsByTagName("province");
+    // Commencer à récupérer les données en utilisant TagName
+    for (i = 0; i < x.length; i++) {
+        table += 
+        "<tr><td>" +
+        x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue + 
+        "</td><td>" +
+        x[i].getElementsByTagName("code")[0].childNodes[0].nodeValue + 
+        "</td><td>" +
+        x[i].getElementsByTagName("capitale")[0].childNodes[0].nodeValue + 
+        "</td><td>" +
+        x[i].getElementsByTagName("superficie")[0].childNodes[0].nodeValue + 
+        "</td><td>" +
+        x[i].getElementsByTagName("population")[0].childNodes[0].nodeValue + 
+        "</td></tr>";
+    }
+    // Afficher les données XML sous forme de tableau
+    document.getElementById("myTable").innerHTML = table;
+}
+</script>
+
+ <!-- CSS -->
+ <style>
+ table {
+     border-collapse: collapse;
+     width: 100%;
+ }
+ th, td {
+     text-align: left;
+     padding: 8px;
+ }
+ tr:nth-child(even) {
+     background-color: #7ce2af
+ }
+ th {
+     background-color: #336699;
+     color: white;
+ }
+ .button {
+     position: relative;
+     text-align: center;
+     padding: 20px;
+     border: 4px solid rgb(55, 12, 211);
+     background-color: rgba(20, 192, 4, 0.5);
+     color: rgb(230, 36, 78);
+     outline: none;
+     border-radius: 10px;
+     font-size: 30px;
+     width: 500px;
+     display: block;
+     margin: 10px auto; /* Centering and spacing */
+ }
+ .button:hover {
+     color: black;
+     background-color: white;
+ }
+ </style>
+
+</head>
+
+<body>
+ <h2 style="text-align: center;">Le Canada</h2>
+
+ <p>
+     <div id="demo">
+
+     <button type="button" class="button" onclick="loadXMLDoc()">Qu'est-ce que le Canada ?</button>
+     <button type="button" class="button" onclick="loadXMLDoc2()">Afficher les provinces et les territoires</button>
+
+ </p>
+  </div>    
+ <p>
+     <table id="myTable"></table>
+ </p>
+
+</body>
+</html>

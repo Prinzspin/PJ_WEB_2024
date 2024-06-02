@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+    <style>
+        .container {
+            width: 550px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid black;
+            background-color: white;
+        }
+        .group {
+            margin-bottom: 15px;
+        }
+        .group label {
+            display: inline-block;
+            width: 150px;
+            vertical-align: top;
+        }
+        .group .radio-group {
+            display: inline-block;
+        }
+        .group .radio-group input {
+            margin-left: 10px;
+        }
+        .milieux{
+            margin-left: 200px;
+        }
+        h1{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>Formulaire: Achat billet d'avion</h1>
+    <form action="2traitement.php" method="post">
+        <div class="group">
+            <label for="clientNumber">Numéro du client :</label>
+            <input type="text" id="clientNumber" name="clientNumber" required>
+        </div>
+
+        <div class="group">
+            <label for="clientName">Nom du client :</label>
+            <input type="text" id="clientName" name="clientName" required>
+        </div>
+
+        <div class="group">
+            <label for="age">Âge :</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+
+        <div class="group">
+            <label>Classe de siège :</label>
+            <div class="radio-group">
+                <input type="radio" id="economy" name="seatClass" value="Economie" required>
+                <label for="economy">Économie</label>
+                <input type="radio" id="business" name="seatClass" value="Affaire">
+                <label for="business">Affaire</label>
+                <input type="radio" id="first" name="seatClass" value="Premiere">
+                <label for="first">Première</label>
+            </div>
+        </div>
+
+        <div class="group">
+            <label>Statut du client :</label>
+            <div class="radio-group">
+                <input type="radio" id="regular" name="clientStatus" value="Regulier" required>
+                <label for="regular">Régulier</label>
+                <input type="radio" id="loyalty" name="clientStatus" value="Fidelite">
+                <label for="loyalty">Fidélité</label>
+                <input type="radio" id="vip" name="clientStatus" value="VIP">
+                <label for="vip">VIP</label>
+            </div>
+        </div>
+
+        <button class="milieux" type="submit">Soumettre</button>
+    </form>
+</div>
+</body>
+</html>

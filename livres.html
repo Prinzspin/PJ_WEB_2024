@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TP_7 livres </title>
+<meta charset="utf-8">
+<style type="text/css">
+
+body {
+background-color: #eeeeee;
+}
+h1 {
+text-align: center;
+color: white;
+background-color: black;
+padding: 20px;
+width: 650px;
+margin: 0 auto 20px auto;
+border-radius: 5px;
+}
+table {
+width: 680px;
+margin: auto;
+background-color: #9999EE;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<h1>Ma bibliotheque virtuel &nbsp;</h1>
+
+<form action="livres.php" method="post">
+<table border="1">
+	<tr>
+		<td>Votre selection:</td>
+		<td>
+		 <input type="radio" name="choix" value="1">Afficher tous les livres<br>
+		 
+		 <input type="radio" name="choix" value="2">Afficher les livres, classer par Titre<br>
+		 
+		 <input type="radio" name="choix" value="3">Afficher les livres, classer par Auteur decroissant<br>
+		 
+		 </td>
+	</tr>
+	<tr >
+		<td colspan="2" align="center">
+		<H3>Barre de recherche<br></H3>
+		</td>
+	</tr>	 
+
+	<tr>
+		<td>Titre</td>
+		<td><Input type="text" name="titre" size="40"></td>
+	</tr>
+	<tr>
+		<td>Auteur</td>
+		<td><Input type="text" name="auteur" size="40"></td>
+	</tr>
+	<tr>
+		<td>editeur</td>
+		<td><Input type="text" name="editeur" size="40"></td>
+	</tr>
+	<tr>
+		<td>Date de publication</td>
+		<td><Input type="text" name="publication" size="40"></td>
+	</tr>
+	<tr>
+		<td>couverture</td>
+		<td><Input type="text" name="couverture" size="40"></td>
+	</tr>
+
+	<tr>
+		<td colspan="2" align="center">
+		 <input type="submit" name="button" value="Soumettre">
+ 		 <input type="submit" name="button1" value="Ajouter">
+ 		 <input type="submit" name="button2" value="Supprimer">
+		</td>
+
+	</tr>
+</table>
+</form>
+</body>
+</html>
